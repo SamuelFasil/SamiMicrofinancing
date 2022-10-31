@@ -1,0 +1,116 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Sami Micro Finances");
+        System.out.println("እንኳን ወደ ሳሚ ማይክሮ ፋይናንስ በሰላም መጡ");
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("For English press one / ለአማርኛ ሁለትን ይጫኑ");
+        byte language = scan.nextByte();
+        if (language == 1) {
+            System.out.println("Please insert your name:");
+            String name = scan.next();
+            System.out.println("Welcome  " + name);
+            System.out.println("Please insert your Age:");
+            byte age = scan.nextByte();
+            if (age < 25) {
+                System.out.println("Sorry, you can not apply for a loan due to our rules and guidelines.");
+            } else {
+                System.out.println("What is your Nationality? Press 1 if you are Ethiopian or 2 if you are not.");
+                byte nationality = scan.nextByte();
+                if (nationality == 1) {
+                    System.out.println("Please read our terms and conditions on our official website before continuing.");
+                    System.out.println("What is the total sum amount of money you are looking forward to borrow:");
+                    long money = scan.nextLong();
+                    long percentage = money * 25 / 100;
+                    System.out.println("Dear Customer, You must have 25% of the total money you desire to borrow and that is:" + percentage);
+                    System.out.println("You have to save the 25% for 6 months in our account. press 1 if you agree and 2 if you don't");
+                    byte ans = scan.nextByte();
+                    if (ans == 1) {
+                        System.out.println("What is your desired money return time interval in months?:");
+                        int time = scan.nextInt();
+                        System.out.println("Interest rate of our company in your return time interval is 15% which is:" + money * time * 0.15);
+                        System.out.println("Do you have any criminal record? press 1 if yes or 2 otherwise");
+                        byte Crime = scan.nextByte();
+                        if (Crime == 2) {
+                            System.out.println("Do you have a collateral? press 1 if yes or 2 otherwise:");
+                            byte collateral = scan.nextByte();
+                            if (collateral == 1) {
+                                System.out.println("Congratulations, You can apply for a loan. please Contact our office on working hours. Thank you for choosing Sami Micro finances.");
+                            } else if (collateral == 2) {
+                                System.out.println("The item you are going to buy with the money you borrow will be the collateral. Press 1 if you agree or 2 otherwise:");
+                                byte item = scan.nextByte();
+                                if (item == 1) {
+                                    System.out.println("Congratulations, You can apply for a loan. please Contact our office on working hours. Thank you for choosing Sami Micro finances.");
+                                } else if (item == 2) {
+                                    System.out.println("Sorry, you can not apply for a loan due to our rules and guidelines.");
+
+                                }
+                            }
+                        } else if (Crime == 1) {
+                            System.out.println("Sorry, you can not apply for a loan due to our rules and guidelines.");
+                        }
+                    } else if (ans == 2) {
+                        System.out.println("Sorry, you can not apply for a loan due to our rules and guidelines.");
+                    }
+                } else if (nationality == 2) {
+                    System.out.println("Sorry, you can not apply for a loan due to our rules and guidelines.");
+                }
+
+            }
+
+
+        } else if (language == 2) {
+            System.out.println("እባክዎ ስምዎን ያሰገቡ፤");
+            String name = scan.next();
+            System.out.println("እንኳን በደህና መጡ  " + name);
+            System.out.println("እባክዎ እድሜዎን ያሰገቡ፡");
+            byte age = scan.nextByte();
+            if (age < 25) {
+                System.out.println("ይቅርታ፤ በድርጅታችን ህግ መሰረት ብድር ለመበደር እድሜዎ አልደረሰም።");
+            } else {
+                System.out.println("ዜግነትዎ ምንድን ነው? ኢትዮጵያዊ ከሆኑ 1ን ይጫኑ፤ ኢትዮጵያዊ ካልሆኑ 2ን ይጫኑ");
+                byte nationality = scan.nextByte();
+                if (nationality == 1) {
+                    System.out.println("እባክዎ ከመቀጠልዎ በፊት የድርጅታችንን ውሎች እና ሁኔታዎች በእኛ ኦፊሴላዊ ድር ጣቢያ ላይ ያንብቡ።");
+                    System.out.println("ለመበደር የሚፈልጉት ጠቅላላ የገንዘብ መጠን ስንት ነው?");
+                    long money = scan.nextLong();
+                    long percentage = money * 25 / 100;
+                    System.out.println("ውድ ደንበኛ፣ ለመበደር ከሚፈልጉት ጠቅላላ ገንዘብ 25% ሊኖርዎት ይገባል፤ ይህም ማለት፤" + percentage);
+                    System.out.println("በድርጅታችን ደንቦች እና መመሪያዎች መሰረት 25% ለ 6 ወራት እኛ የባንክ ሒሳብ ውስጥ መቆጠብ አለብዎት። ከተስማሙ 1ን ይጫኑ እና ካልተስማሙ 2ን ይጫኑ");
+                    byte ans = scan.nextByte();
+                    if (ans == 1) {
+                        System.out.println("ብሩን መመለስ የሚፈልጉት በምን ያህል ጊዜ ወራት ውስጥ ነው?:");
+                        int time = scan.nextInt();
+                        System.out.println("በእርስዎ የመመለሻ ጊዜ ልዩነት የድርጅታችን የወለድ መጠን 15% ሲሆን ይህም፡-" + money * time * 0.15);
+                        System.out.println("የወንጀል ሪከርድ አለብዎት? አዎ ከሆነ 1ን ይጫኑ ካልሆነ 2ን ይጫኑ፤");
+                        byte Crime = scan.nextByte();
+                        if (Crime == 2) {
+                            System.out.println("ለመበደር የሚያስችልዎ መያዣ አለዎት? ካለዎት 1ን ካልሆነ 2ን ይጫኑ፡-");
+                            byte collateral = scan.nextByte();
+                            if (collateral == 1) {
+                                System.out.println("እንኳን ደስ አለዎት, ብድር ለማግኘት ማመልከት ይችላሉ. እባክዎን በስራ ሰዓት ቢሮአችንን ያነጋግሩ። የሳሚ ማይክሮ ፋይናንስ ስለመረጡ እናመሰግናለን.");
+                            } else if (collateral == 2) {
+                                System.out.println("በተበደሩት ገንዘብ የሚገዙት ዕቃ መያዣ ይሆናል። ከተስማሙ 1ን ካልሆነ 2ን ይጫኑ፡-");
+                                byte item = scan.nextByte();
+                                if (item == 1) {
+                                    System.out.println("እንኳን ደስ አለዎት, ብድር ለማግኘት ማመልከት ይችላሉ. እባክዎን በስራ ሰዓት ቢሮአችንን ያነጋግሩ። የሳሚ ማይክሮ ፋይናንስ ስለመረጡ እናመሰግናለን.");
+                                } else if (item == 2) {
+                                    System.out.println("ይቅርታ፣ በድርጅታችን ደንቦች እና መመሪያዎች ምክንያት ብድር ለማግኘት ማመልከት አይችሉም።");
+
+                                }
+                            }
+                        } else if (Crime == 1) {
+                            System.out.println("ይቅርታ፣ በድርጅታችን ደንቦች እና መመሪያዎች ምክንያት ብድር ለማግኘት ማመልከት አይችሉም።");
+                        }
+                    } else if (ans == 2) {
+                        System.out.println("ይቅርታ፣ በድርጅታችን ደንቦች እና መመሪያዎች ምክንያት ብድር ለማግኘት ማመልከት አይችሉም።");
+                    }
+                } else if (nationality == 2) {
+                    System.out.println("ይቅርታ፣ በድርጅታችን ደንቦች እና መመሪያዎች ምክንያት ብድር ለማግኘት ማመልከት አይችሉም።");
+                }
+
+
+            }
+        }
+    }
+}
